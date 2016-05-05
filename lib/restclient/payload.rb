@@ -89,7 +89,7 @@ module RestClient
           elsif elem.is_a? Array
             result += flatten_params_array(elem, calculated_key)
           else
-            result << ["#{calculated_key}[]", elem]
+            result << ["#{calculated_key}", elem] # fix for supporting docker-shell-helper
           end
         end
         result
